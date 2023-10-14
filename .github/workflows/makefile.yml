@@ -1,0 +1,39 @@
+name: Makefile CI
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ '*' ]
+  pull_request:
+    branches: [ '*' ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+      with: 
+        submodules: true
+
+    - name: Install dependencies
+      run: sudo apt install -y lua
+
+    - name: Run make dist
+      run: make
+      
+    - name: Run test
+      run: make test
+
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+          if-no-files-found: error
+          path: |
+              ./dist/*.lua
+              ./LICENSE
+              ./test.lua
+              ./ReadMe.md
+              

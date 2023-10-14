@@ -1,0 +1,3 @@
+[submodule "lua/convert-charsets"]
+	path = lua/convert-charsets
+	url = https://github.com/fxliang/convert-charsets.git

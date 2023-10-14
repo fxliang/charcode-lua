@@ -18,7 +18,7 @@ jobs:
         submodules: true
 
     - name: Install dependencies
-      run: sudo apt install -y lua
+      run: sudo apt install -y lua5.4
 
     - name: Run make dist
       run: make

@@ -1,6 +1,6 @@
 local unpack = table.unpack
 -- add package path
-package.path = package.path .. ';./dist/?.lua;dist/charcode-lua/?.lua'
+package.path = package.path .. ';./dist/charcode-lua/?.lua;./charcode-lua/?.lua'
 
 local charcode = require('charcode')
 local FilterText = charcode.FilterText

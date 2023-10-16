@@ -11,6 +11,7 @@ all:
 	cp ./ReadMe.md ./dist/
 
 test:
+	cd dist/
 	lua test.lua
 
 clean:

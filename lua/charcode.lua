@@ -31,6 +31,7 @@ local function is_extended_cjk(ch)
   (ch >= 0x2CEB0 and ch <= 0x2EBEF) or    -- CJK Unified Ideographs Extension F
   (ch >= 0x30000 and ch <= 0x3134F) or    -- CJK Unified Ideographs Extension G
   (ch >= 0x31350 and ch <= 0x323AF) or    -- CJK Unified Ideographs Extension H
+  (ch >= 0x2EBF0 and ch <= 0x2EE5D) or    -- CJK Unified Ideographs Extension I
   (ch >= 0x3300 and ch <= 0x33FF) or      -- CJK Compatibility
   (ch >= 0xFE30 and ch <= 0xFE4F) or      -- CJK Compatibility Forms
   (ch >= 0xF900 and ch <= 0xFAFF) or      -- CJK Compatibility Ideographs

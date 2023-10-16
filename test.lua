@@ -1,6 +1,6 @@
 local unpack = table.unpack
 -- add package path
-package.path = package.path .. ';./dist/?.lua'
+package.path = package.path .. ';./dist/?.lua;dist/charcode-lua/?.lua'
 
 local charcode = require('charcode')
 local FilterText = charcode.FilterText
@@ -21,6 +21,7 @@ end
 
 ---[[
 -- test FilterText
+test_filtertext("🐮逼", 'gbk', true)
 test_filtertext("荣罒", 'gb2312', true)
 test_filtertext("荣耀", 'gb2312', false)
 test_filtertext("荣耀", 'gbk+mac_japanese', false)

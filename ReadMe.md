@@ -29,7 +29,11 @@ local charcode = require('charcode')
 local FilterText = charcode.FilterText
 local conv_to_utf = charcode.conv_to_utf
 local conv_from_utf = charcode.conv_from_utf
-
 ```
 
 to make dist, just run in linux ` make clean && make && make test `
+to use with rime, 
+- run `make clean && make && make && test`
+- copy `dist\charcode-lua` to `path_to_rime_user_dir`
+- patch lines in `charcode_lua_schema_patch.txt` to your schema custom file
+- deploy your schema, and have fun

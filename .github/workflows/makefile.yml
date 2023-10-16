@@ -32,8 +32,5 @@ jobs:
       with:
           if-no-files-found: error
           path: |
-              ./dist/*.lua
-              ./LICENSE
-              ./test.lua
-              ./ReadMe.md
-              
+              ./dist/*
+              ./dist/charcode-lua/*

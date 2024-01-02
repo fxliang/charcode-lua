@@ -205,6 +205,7 @@ local function normalize_charset_name(charset)
 end
 --check if unicode char ch is emoji
 local function is_emoji(ch)
+  if not ch then return false end
   --emoji data from http://www.unicode.org/Public/emoji/12.0/emoji-data.txt
   return ((ch == 0x0023) or
   (ch == 0x002A) or

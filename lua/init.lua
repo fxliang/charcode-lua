@@ -22,7 +22,7 @@ local function filter(input, env)
 			break
 		end
 	end
-	local is_emoji_enbaled = context:get_option('enable_emoji')
+	local is_emoji_enbaled = context:get_option('emoji_suggestion')
 	for cand in input:iter() do
 		if FilterText(cand.text, charsets, is_emoji_enbaled) then
 			yield(cand)

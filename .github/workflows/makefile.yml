@@ -1,5 +1,8 @@
 name: Makefile CI
 
+permissions:
+  contents: write
+
 on:
   workflow_dispatch:
   push:
@@ -26,11 +29,17 @@ jobs:
     - name: Run test
       run: make test
 
+    - name: tar dist files
+      run: tar -cvf dist.tar dist
 
-    - name: Upload artifact
-      uses: actions/upload-artifact@v4
+    # create nightly release
+    - name: Create Nightly release
+      if: ${{ github.repository == 'fxliang/charcode-lua' && github.ref == 'refs/heads/master' }}
+      uses: 'marvinpinto/action-automatic-releases@latest'
       with:
-          if-no-files-found: error
-          path: |
-              ./dist/*
-              ./dist/charcode-lua/*
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        automatic_release_tag: latest
+        prerelease: true
+        title: "Nightly Build"
+        files: |
+          ./dist.tar
